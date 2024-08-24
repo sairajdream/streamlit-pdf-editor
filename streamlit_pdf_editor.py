@@ -2,6 +2,7 @@ import streamlit as st
 import pymupdf
 
 st.title("Personal PDF Editor")
+st.image("./Picture1.png")
 uploaded_files = st.file_uploader("Choose a PDF file", type="pdf")
 
 if uploaded_files:
