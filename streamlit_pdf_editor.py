@@ -5,7 +5,9 @@ st.title("Personal PDF Editor")
 uploaded_files = st.file_uploader("Choose a PDF file", type="pdf")
 
 if uploaded_files:
+    st.write(uploaded_files.name.removesuffix(".pdf"))
     name = uploaded_files.name.removesuffix(".pdf")
+    
     doc = pymupdf.open(uploaded_files)
     for pg_no in range(len(doc)):
         doc[pg_no].insert_image(pymupdf.Rect(353, 87, 560, 106), filename = "./Picture1.png")
