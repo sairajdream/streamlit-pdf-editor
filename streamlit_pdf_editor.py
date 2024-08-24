@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_pdf_viewer import pdf_viewer
 import os
 import PyPDF2 as pdf
 import pymupdf
