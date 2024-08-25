@@ -13,7 +13,7 @@ if uploadedfile is not None:
     writer_pg.pages[0].merge_page(reader_pg, over=False)
 
     writer_pg.write(f"{name}_e.pdf")
-    with open(f"{name}_e.pdf") as pdf:
+    with open(f"{name}_e.pdf", "rb") as pdf:
         byte = pdf.read()
         st.download_button("Download PDF", byte, file_name=f"{name}_e.pdf", mime="application/pdf")
 
