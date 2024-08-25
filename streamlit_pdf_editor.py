@@ -1,12 +1,12 @@
 import streamlit as st
-import os
-import PyPDF2 as pdf
-import pymupdf
+from pypdf import PdfReader, PdfWriter
 
 st.title("Personal PDF Editor")
-# st.image("Picture1.png")
 uploadedfile = st.file_uploader("Choose a PDF file")
 
+with open("2.pdf", "rb") as pdf:
+    byte = pdf.read()
+    st.download_button("Download PDF", byte, file_name="2.pdf", mime="application/pdf")
 if uploadedfile is not None:
     with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
         f.write(uploadedfile.getbuffer())
