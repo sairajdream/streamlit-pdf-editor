@@ -14,11 +14,8 @@ if uploadedfile is not None:
 
     writer_pg.write(f"{name}_e.pdf")
     with open(f"{name}_e.pdf") as pdf:
-        st.write("open success")
-
-with open("2.pdf", "rb") as pdf:
-    byte = pdf.read()
-    st.download_button("Download PDF", byte, file_name="2.pdf", mime="application/pdf")
+        byte = pdf.read()
+        st.download_button("Download PDF", byte, file_name=f"{name}_e.pdf", mime="application/pdf")
 
 # if uploadedfile is not None:
 #     with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
